@@ -31,7 +31,6 @@ Using this class :
 
 
 	*/
-namespace webapplicationsecurity;
 
 class WebSecurity
 {
