@@ -83,7 +83,7 @@ class WebSecurity
     {
         $valeur = addslashes($valeur);
         $valeur = htmlentities($valeur,ENT_QUOTES);
-        return mysqli_real_escape_string($valeur);
+        return mysql_real_escape_string($valeur);
     }
     /*
     Anti Cross Site Scripting
