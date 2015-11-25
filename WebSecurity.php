@@ -79,61 +79,61 @@ class WebSecurity
     Anti SQL injection
     Return filtered String  
     */
-    public static function SQLinj($valeur)
+    public static function SQLinj($value)
     {
-        $valeur = addslashes($valeur);
-        $valeur = htmlentities($valeur,ENT_QUOTES);
-        return mysql_real_escape_string($valeur);
+        $value = addslashes($value);
+        $value = htmlentities($value,ENT_QUOTES);
+        return mysql_real_escape_string($value);
     }
     /*
     Anti Cross Site Scripting
     Return filtered String  
     */
-    public static function XSS($valeur)
+    public static function XSS($value)
     {
         
-        $valeur = strip_tags($valeur);
-        $valeur = htmlentities($valeur, ENT_QUOTES);
-        $valeur = htmlspecialchars($valeur);
+        $value = strip_tags($value);
+        $value = htmlentities($value, ENT_QUOTES);
+        $value = htmlspecialchars($value);
         if (get_magic_quotes_gpc()) {
-            $valeur = stripslashes($valeur);
+            $value = stripslashes($value);
         }
-        return $valeur;
+        return $value;
     }
     /*
     Anti Remote File Inclusion 
     Return filtered String  
     */
-    public static function RFI($valeur)
+    public static function RFI($value)
     {
         
-        $valeur = str_replace("http://","",$valeur);
-        $valeur = str_replace("https://","",$valeur);
-        $valeur = str_replace("ftp://","",$valeur);
-        $valeur = str_replace("php://","",$valeur);
-        $valeur = str_replace("data://","",$valeur);
-        $valeur = str_replace("base64","",$valeur);
-        $valeur = str_replace("text","",$valeur);
-        $valeur = str_replace("com://","",$valeur);
-        $valeur = str_replace("://","",$valeur);
+        $value = str_replace("http://","",$value);
+        $value = str_replace("https://","",$value);
+        $value = str_replace("ftp://","",$value);
+        $value = str_replace("php://","",$value);
+        $value = str_replace("data://","",$value);
+        $value = str_replace("base64","",$value);
+        $value = str_replace("text","",$value);
+        $value = str_replace("com://","",$value);
+        $value = str_replace("://","",$value);
         
-        return $valeur;
+        return $value;
         
     }
     /* 
     Anti Local File Inclusion 
     Return filtered String  
     */
-    public static function LFI($valeur)
+    public static function LFI($value)
     {
-        $valeur = str_replace("%00","",$valeur);
-        $valeur = str_replace("../","",$valeur);
-        $valeur = str_replace("/passwd","",$valeur);
-        $valeur = str_replace("/shadow","",$valeur);
-        $valeur = str_replace("hosts","",$valeur);
-        $valeur = str_replace("/etc/","",$valeur);
-        $valeur = str_replace("config","",$valeur);
-        return $valeur;
+        $value = str_replace("%00","",$value);
+        $value = str_replace("../","",$value);
+        $value = str_replace("/passwd","",$value);
+        $value = str_replace("/shadow","",$value);
+        $value = str_replace("hosts","",$value);
+        $value = str_replace("/etc/","",$value);
+        $value = str_replace("config","",$value);
+        return $value;
     }
     /*
     Helper Method For Tor Detecting
