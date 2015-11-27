@@ -24,11 +24,21 @@ b)**LFI** (Local File Inclusion)  : By Using Static Method LFI(string) return st
 
 
 **Using this class :** 
+I - Create composer.json like this
 
-I -   include(WebSecur!ty.class.php);
+{
+	"require": {
 
-II -  WebSecurity::Method  //(call class methods eg : UsingTor(), XSS(string), ...)
+        "soubai/webapplicationsecurity": "dev-master"
+    }
+}
 
-III - Enjoy
+II - create Test.php
+
+III- require "vendor/autoload.php"; in Test.php
+
+VI - WebSecurity::Method  //(call class methods eg : UsingTor(), XSS(string), ...)
+
+V - Enjoy
 
 ----------
