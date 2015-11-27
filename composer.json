@@ -1,8 +1,10 @@
 {
     "name": "soubai/webapplicationsecurity",
     "description": "WebSecurity is a PHP class to Help Devlopper to prevent a almost webapplication security fails",
-    "type": "dev",
+    "type": "composer",
+    "version" : "1.0.0",
     "license": "MIT",
+    "minimum-stability" : "beta",
     "authors": [
         {
             "name": "soubai elidrissi abderrahim",
