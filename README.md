@@ -23,15 +23,9 @@ a)**RFI** (Remote File Inclusion) : By Using Static Method RFI(string) return st
 b)**LFI** (Local File Inclusion)  : By Using Static Method LFI(string) return string.
 
 
-**Using this class :** 
-I - Create composer.json like this
+**Using this class : install using composer** 
 
-{
-	"require": {
-
-        "soubai/webapplicationsecurity": "dev-master"
-    }
-}
+	composer require soubai/webapplicationsecurity
 
 II - create Test.php
 
