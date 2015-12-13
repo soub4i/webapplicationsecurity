@@ -25,7 +25,7 @@ b)**LFI** (Local File Inclusion)  : By Using Static Method LFI(string) return st
 
 **Using this class : install using composer** 
 
-	composer require "soubai/webapplicationsecurity":"0.11a"
+	composer require "soubai/webapplicationsecurity":"0.11a1"
 
 II - create Test.php
 
