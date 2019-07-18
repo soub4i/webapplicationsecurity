@@ -11,7 +11,7 @@
  *
  * @File		WebSecur!ty.class.php
 
-Description :  WebSecurity is a PHP class to Help Devlopper to prevent a almost webapplication security fails:
+Description :  WebSecurity is a PHP class to Help Developper to prevent a almost webapplication security fails:
 			   
 			   A - Using Tor OR Proxy to access  your webapp;
 			   		i)  Static Method UsingTor() return bool (if user use Tor Browser = True).
@@ -40,12 +40,9 @@ class WebSecurity
     */	
     public static function UsingTor()
     {
-        if (_IsTorExitPoint()) {
-            return true;
-        } else {
-            return false;
-        }
+        return _IsTorExitPoint();
     }
+	
     /*
     Proxy Detector
     Return True if user use Proxy service
@@ -74,7 +71,7 @@ class WebSecurity
     		return true;
        	}
 	}
-	}
+    }
     /*
     Anti SQL injection
     Return filtered String  
@@ -139,11 +136,7 @@ class WebSecurity
     Helper Method For Tor Detecting
     */
     private function _IsTorExitPoint(){
-        if (gethostbyname(_ReverseIPOctets($_SERVER['REMOTE_ADDR']).".".$_SERVER['SERVER_PORT']."."._ReverseIPOctets($_SERVER['SERVER_ADDR']).".ip-port.exitlist.torproject.org")=="127.0.0.2") {
-            return true;
-        } else {
-            return false;
-        }
+        return  (gethostbyname(_ReverseIPOctets($_SERVER['REMOTE_ADDR']).".".$_SERVER['SERVER_PORT']."."._ReverseIPOctets($_SERVER['SERVER_ADDR']).".ip-port.exitlist.torproject.org")=="127.0.0.2");
     }
     private function _ReverseIPOctets($inputip){
         $ipoc = explode(".",$inputip);
